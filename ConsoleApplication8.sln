@@ -1,31 +1,29 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication8", "ConsoleApplication8\ConsoleApplication8.vcxproj", "{9FA9E0A5-0781-45F8-8C08-4E3848340697}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Debug|x64.ActiveCfg = Debug|x64
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Debug|x64.Build.0 = Debug|x64
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Debug|x86.ActiveCfg = Debug|Win32
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Debug|x86.Build.0 = Debug|Win32
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Release|x64.ActiveCfg = Release|x64
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Release|x64.Build.0 = Release|x64
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Release|x86.ActiveCfg = Release|Win32
-		{9FA9E0A5-0781-45F8-8C08-4E3848340697}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CE64F6FE-E07B-42A8-ADFF-E53B2DDC6906}
-	EndGlobalSection
-EndGlobal
+#include <iostream>
+using namespace std;
+
+void bubblesort(int arr[], int n) {
+	int i, j;
+	bool swapped;
+	for (i = 0; i < n - 1; i++) {
+		swapped = false;
+		for (j = 0; j < n - 1; j++) {
+			if (arr[j] > arr[j + 1]){
+				swap(arr[j], arr[j + 1]);
+				swapped = true;
+			}
+		}
+	}
+}
+void printarray(int arr[], int size) {
+	int i;
+	for (i = 0; i < size; i++)
+		cout << " " << arr[i];
+}
+int main() {
+	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+	int N = sizeof(arr) / sizeof(arr[0]);
+	bubblesort(arr, N);
+	cout << "Sorted array:";
+	printarray(arr, N);
+	return 0;
+}
